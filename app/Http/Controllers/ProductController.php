@@ -90,7 +90,6 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(),$rules);
 
         if ($validator->fails()){    
-          //  return redirect()->back()->withErrors($validator)->withInput();
           return redirect()->route('products.edit',$product->id)->withInput()->withErrors($validator);
             }
          //here we will Update product in db
